@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ task.summary }}{% endblock %}
+
+{% block content %}
+<h2>{{ task.summary }}</h2>
+<p><strong>Статус:</strong> {{ task.status }}</p>
+<p><strong>Тип:</strong> {{ task.type }}</p>
+<p><strong>Описание:</strong></p>
+<p>{{ task.description|linebreaks|default:"Нет описания" }}</p>
+<p><strong>Создано:</strong> {{ task.created|date:"d.m.Y H:i" }}</p>
+<p><strong>Обновлено:</strong> {{ task.updated|date:"d.m.Y H:i" }}</p>
+<a href="{% url 'task_update' task.pk %}" class="btn">Редактировать</a>
+<a href="{% url 'task_delete' task.pk %}" class="btn btn-danger">Удалить</a>
+<a href="{% url 'index' %}" class="btn">Назад к списку</a>
+{% endblock %}
