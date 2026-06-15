@@ -5,7 +5,9 @@
 {% block content %}
 <h2>{{ task.summary }}</h2>
 <p><strong>Статус:</strong> {{ task.status }}</p>
-<p><strong>Тип:</strong> {{ task.type }}</p>
+<p><strong>Тип(ы):</strong>
+{% for t in task.type.all %}{{ t }}{% if not forloop.last %}, {% endif %}{% empty %}—{% endfor %}
+</p>
 <p><strong>Описание:</strong></p>
 <p>{{ task.description|linebreaks|default:"Нет описания" }}</p>
 <p><strong>Создано:</strong> {{ task.created|date:"d.m.Y H:i" }}</p>

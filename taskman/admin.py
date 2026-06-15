@@ -16,18 +16,5 @@ class TaskStatusAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ['id', 'summary', 'status', 'type', 'created', 'updated']
-    readonly_fields = ['created', 'updated']
-    ordering = ['-created']
-    fieldsets = (
-        ('Основная информация', {
-            'fields': ('summary', 'description')
-        }),
-        ('Категоризация', {
-            'fields': ('status', 'type')
-        }),
-        ('Даты', {
-            'fields': ('created', 'updated'),
-            'classes': ('collapse',)
-        }),
-    )
+    list_display = ('summary', 'status', 'created', 'updated')
+    filter_horizontal = ('type',)

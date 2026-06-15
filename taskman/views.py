@@ -24,12 +24,10 @@ class TaskDetailView(TemplateView):
 
 class TaskCreateView(TemplateView):
     template_name = 'task_create.html'
-
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = TaskForm()
-        return context
-
+        ctx = super().get_context_data(**kwargs)
+        ctx['form'] = TaskForm()
+        return ctx
     def post(self, request, *args, **kwargs):
         form = TaskForm(request.POST)
         if form.is_valid():
@@ -40,14 +38,12 @@ class TaskCreateView(TemplateView):
 
 class TaskUpdateView(TemplateView):
     template_name = 'task_update.html'
-
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        ctx = super().get_context_data(**kwargs)
         task = get_object_or_404(Task, pk=kwargs['pk'])
-        context['task'] = task
-        context['form'] = TaskForm(instance=task)
-        return context
-
+        ctx['task'] = task
+        ctx['form'] = TaskForm(instance=task)
+        return ctx
     def post(self, request, *args, **kwargs):
         task = get_object_or_404(Task, pk=kwargs['pk'])
         form = TaskForm(request.POST, instance=task)
