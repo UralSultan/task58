@@ -1,18 +1,22 @@
 from django import forms
-from taskman.models import Task, TaskType, TaskStatus
+from .models import Task
+from .validators import validate_no_ban_words, validate_summary_length
 
-
-class TaskForm(forms.ModelForm):
-    summary = forms.CharField(max_length=200, required=True, label='Краткое описание')
-    description = forms.CharField(widget=forms.Textarea, required=False, label='Полное описание')
-    status = forms.ModelChoiceField(queryset=TaskStatus.objects.all(), required=True, label='Статус')
-    type = forms.ModelMultipleChoiceField(
-        queryset=TaskType.objects.all(),
-        required=False,
-        widget=forms.CheckboxSelectMultiple,
-        label='Тип(ы)'
-    )
-
+class TaskModelForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = ['summary', 'description', 'status', 'type']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows':4}),
+        }
+
+    def clean_summary(self):
+        summary = self.cleaned_data.get('summary', '')
+        validate_summary_length(summary)
+        validate_no_ban_words(summary)
+        return summary
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description') or ''
+        validate_no_ban_words(description)
+        return description
