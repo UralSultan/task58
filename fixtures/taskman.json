@@ -60,6 +60,7 @@
         "description": "Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.",
         "status": 1,
         "type": [1],
+        "is_deleted": false,
         "created": "2026-06-11T12:23:19.711Z",
         "updated": "2026-06-11T12:23:19.711Z"
     }
@@ -73,6 +74,7 @@
         "description": "Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.",
         "status": 2,
         "type": [1],
+        "is_deleted": false,
         "created": "2026-06-11T12:23:28.919Z",
         "updated": "2026-06-11T12:23:28.919Z"
     }
@@ -86,6 +88,7 @@
         "description": "Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.",
         "status": 3,
         "type": [1],
+        "is_deleted": false,
         "created": "2026-06-11T12:23:38.677Z",
         "updated": "2026-06-11T12:23:38.677Z"
     }
@@ -99,6 +102,7 @@
         "description": "Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.",
         "status": 2,
         "type": [2],
+        "is_deleted": false,
         "created": "2026-06-11T12:23:50.588Z",
         "updated": "2026-06-11T12:23:50.588Z"
     }
@@ -112,6 +116,7 @@
         "description": "Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.Big description.",
         "status": 1,
         "type": [3],
+        "is_deleted": false,
         "created": "2026-06-11T12:24:01.397Z",
         "updated": "2026-06-11T12:24:01.397Z"
     }

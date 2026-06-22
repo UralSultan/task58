@@ -18,6 +18,7 @@ class TaskStatusAdmin(admin.ModelAdmin):
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('summary', 'project', 'status', 'created', 'updated')
     filter_horizontal = ('type',)
+    exclude = ('is_deleted',)
 
 
 @admin.register(Project)

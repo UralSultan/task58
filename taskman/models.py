@@ -45,6 +45,7 @@ class Task(models.Model):
     type = models.ManyToManyField('TaskType', related_name='tasks', blank=True)
     created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+    is_deleted = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Задача'
