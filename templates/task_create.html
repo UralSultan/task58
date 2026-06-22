@@ -4,10 +4,11 @@
 
 {% block content %}
 <h2>Создать задачу</h2>
+<p><strong>Проект:</strong> {{ project.title }}</p>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn">Создать</button>
-    <a href="{% url 'index' %}" class="btn">Отмена</a>
+    <a href="{% url 'project_detail' project.pk %}" class="btn">Отмена</a>
 </form>
 {% endblock %}
